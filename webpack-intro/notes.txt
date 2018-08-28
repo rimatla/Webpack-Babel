@@ -1,0 +1,66 @@
+From Samuel Oloruntoba
+https://scotch.io/tutorials/getting-started-with-webpack-module-bundling-magic
+
+- Webpack in it's simplest form is a module bundler.
+
+-Install globally
+$npm install -g webpack
+
+From the root of our working directory, run.
+$webpack main.js bundle.js
+
+- Check out the newly created bundle.js, you will see that webpack has created some wrapper around our own code.
+- Because of this inclusion, we can use AMD syntax or requirejs to load javascript files.
+
+-The webpack command line option takes in two params: the entry and the output.
+
+- Create a webpack.config.js
+
+- Webpack provides two methods for watching for a file change. The first one is using the command line.
+$webpack --watch
+$webpack -w
+
+-Loaders teach webpack how to load files for bundling.
+If you use a preprocessor like SASS, webpack needs to be taught how to convert SASS code to CSS, and this is where a loader comes in.
+
+Since loaders are not added to webpack by default as it will make webpack bloated with a lot of dependencies.
+We need to npm install any loader required by our project
+
+-ES6
+We can write javascript using es6 standard(ES2015). Since browser support is still low.
+We'll use third party transpiler like babel to convert our code to old JavaScript syntax.
+
+To convert our code ES2015 or es6 to plain old es5, we need to install
+-babel-loader
+-babel-core
+babel-preset-2015.
+
+$npm install --save-dev babel-loader babel-core babel-preset-es2015
+
+-css
+Using webpack to load CSS requires two loaders: css-loader and style-loader.
+The first loader loads the content of a CSS file, whilst the second loader injects the CSS into the page
+
+$npm install --save-dev css-loader style-loader
+
+-Server
+Webpack creates a dev server to easily check our code.
+The server listens for any change in your project and then injects that change into the browser.
+No more ctrl+r.
+
+$npm install webpack-dev-server -g
+
+Now that it is installed, go to your project directory and run webpack-dev-server command.
+
+webpack-dev-server
+
+-The project will be available at http://localhost:8080/webpack-dev-server/.
+
+-Production
+We all know that minification is good for getting scripts and styles ready for production.
+For this particular reason, it makes more sense to use a webpack command to make our bundles production ready.
+Webpack went ahead and did just that.
+To get our bundle ready for production, from the root of our project, we can run:
+
+webpack -p
+
