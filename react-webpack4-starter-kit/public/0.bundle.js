@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{38:function(e,n,a){"use strict";a.r(n);var t=a(1),l=a.n(t);n.default=function(){return l.a.createElement("div",null,l.a.createElement("h1",null,"Not Found"," ",l.a.createElement("span",{role:"img","aria-label":"crying cat"},"😿")))}}}]);
